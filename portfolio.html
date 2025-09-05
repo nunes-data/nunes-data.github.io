@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>José Nunes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">José Nunes</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>José Nunes</h1>
+                <div class="subtitle">Graduate Student & ML Researcher</div>
+                <p>Bridging mathematics with practical AI solutions. Currently pursuing a Masters in Big Data Analysis and Engineering, specializing in Machine Learning algorithms and their mathematical foundations.</p>
+                <div class="cta-buttons">
+                    <a href="#projects" class="btn-primary">View My Work</a>
+                    <a href="#about" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+            
+            <div class="math-viz">
+                
+                <svg class="neural-network" viewBox="0 0 600 650">
+                    <!-- Input Layer (8 nodes) -->
+                    <g class="layer input-layer">
+                        <circle cx="50" cy="50" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="50" cy="100" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="0.1s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="50" cy="150" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="0.2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="50" cy="200" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="0.3s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="50" cy="250" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="0.4s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="50" cy="300" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="50" cy="350" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="0.6s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="50" cy="400" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="0.7s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+                    
+                    <!-- Hidden Layer 1 (12 nodes) -->
+                    <g class="layer hidden-layer-1">
+                        <circle cx="200" cy="40" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="0.8s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="90" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="0.9s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="140" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="1.0s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="190" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="1.1s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="240" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="1.2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="290" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="1.3s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="340" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="1.4s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="390" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="1.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="440" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="1.6s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="490" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="1.7s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="540" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="1.8s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="590" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="1.9s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+                    
+                    <!-- Hidden Layer 2 (10 nodes) -->
+                    <g class="layer hidden-layer-2">
+                        <circle cx="350" cy="60" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="2.0s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="350" cy="120" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="2.1s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="350" cy="180" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="2.2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="350" cy="240" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="2.3s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="350" cy="300" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="2.4s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="350" cy="360" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="2.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="350" cy="420" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="2.6s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="350" cy="480" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="2.7s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="350" cy="540" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="2.8s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="350" cy="600" r="8" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="2.9s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+                    
+                    <!-- Hidden Layer 3 (8 nodes) -->
+                    <g class="layer hidden-layer-3">
+                        <circle cx="500" cy="80" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="3.0s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="500" cy="160" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="3.1s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="500" cy="240" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="3.2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="500" cy="320" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="3.3s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="500" cy="400" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="3.4s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="500" cy="480" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="3.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="500" cy="560" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="3.6s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="500" cy="640" r="8" fill="#00f2fe" class="node">
+                            <animate attributeName="r" values="8;12;8" dur="2s" begin="3.7s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+                    
+                    <!-- Output Layer (4 nodes) -->
+                    <g class="layer output-layer">
+                        <circle cx="650" cy="150" r="10" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="10;14;10" dur="2s" begin="3.8s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="650" cy="250" r="10" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="10;14;10" dur="2s" begin="3.9s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="650" cy="350" r="10" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="10;14;10" dur="2s" begin="4.0s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="650" cy="450" r="10" fill="#4facfe" class="node">
+                            <animate attributeName="r" values="10;14;10" dur="2s" begin="4.1s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+                    
+                    <!-- Connections between layers -->
+                    <g class="connections">
+                        <!-- Generated with JavaScript -->
+                    </g>
+                    
+                    <defs>
+                        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#4facfe"/>
+                            <stop offset="100%" style="stop-color:#00f2fe"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About Me</h2>
+            <div class="about-content">
+                <div class="about-text fade-in">
+                    <h3>Mathematical Foundation, Practical Application</h3>
+                    <p>With a strong foundation in mathematics and currently pursuing a Masters in Big Data, I specialize in developing machine learning solutions that are both theoretically sound and practically effective.</p>
+                    <p>My approach combines rigorous mathematical analysis with innovative algorithmic design, focusing on interpretable models and scalable solutions for real-world problems.</p>
+                    <p>I'm passionate about bridging the gap between abstract mathematical concepts and their practical applications in artificial intelligence and big data.</p>
+                </div>
+                
+                <div class="skills-grid fade-in">
+                    <div class="skill-item">
+                        <h4>Mathematical Modeling</h4>
+                        <p>Linear and Abstract Algebra, Probability, Statistics</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Machine Learning</h4>
+                        <p>Deep Learning, Neural Networks, Ensemble Methods, NLP</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Programming</h4>
+                        <p>Python, R, SQL, TensorFlow, PyTorch, Scikit-learn</p>
+                    </div>
+                    <div class="skill-item">
+                        <h4>Data Analysis</h4>
+                        <p>Statistical Analysis, Visualization, Big Data Processing</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <div class="container">
+            <h2 class="section-title fade-in">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card fade-in">
+                    <h3>Coal Tracking: Coal Production Management</h3>
+                    <p>The application consists of a platform for managing processes associated with charcoal production.</p>
+                    <p>The automatic update of charcoal stock, company revenue, and profit whenever a sale occurs is just one example of the app functionalities.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">MySQL</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">Relational Databases</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github fa-2x"></i></a>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <h3>Anomaly Detection in Financial Transactions</h3>
+                    <p>Developed a machine learning system that can detect fraudulent credit card transactions in real-time while minimizing false positives. The system analyzes transaction patterns, user behavior, and contextual information to identify suspicious activities.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Scikit-learn</span>
+                        <span class="tech-tag">Time Series</span>
+                        <span class="tech-tag">SVM</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github fa-2x"></i></a>
+                    </div>
+                </div>
+                
+                <div class="project-card fade-in">
+                    <h3>Real Estate Price Prediction</h3>
+                    <p>With the usage of ARIMA and LSTM Networks, I developed a time series forecasting system that predicts future house prices based on historical data, economic indicators, and seasonal patterns. The model should account for both short-term fluctuations and long-term trends in the housing market.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Neural Networks</span>
+                        <span class="tech-tag">Geospatial ML</span>
+                        <span class="tech-tag">Gradient Boosting</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github fa-2x"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <h3>AI-Powered Detection for MS and PML</h3>
+                    <p>Developed a deep learning system using 3D neural networks to detect and differentiate between Multiple Sclerosis and Progressive Multifocal Leukoencephalopathy in MRI scans. </p>
+                    <p>Implemented image preprocessing pipelines and segmentation algorithms to identify lesion patterns and quantify disease progression. </p>
+                    <p>Validated model performance through clinical metrics and explainable AI techniques to support diagnostic decision-making.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Neural Networks</span>
+                        <span class="tech-tag">U-Net Architecture</span>
+                        <span class="tech-tag">Transfer Learning</span>
+                        <span class="tech-tag">Vision Transformers</span>
+                        <span class="tech-tag">Multi-modal Learning</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github fa-2x"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <h3>Real-Time E-Commerce Analytics Pipeline</h3>
+                    <p>Built a scalable data engineering infrastructure using Apache Kafka and Spark Streaming to process and analyze real-time customer behavior and transaction data.</p>
+                    <p>Designed dimensional models in Snowflake data warehouse to enable business intelligence and machine learning applications. </p>
+                    <p>Implemented monitoring and alerting systems to ensure pipeline reliability while handling high-volume data streams.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Apache Kafka</span>
+                        <span class="tech-tag">Spark</span>
+                        <span class="tech-tag">Redis</span>
+                        <span class="tech-tag">Apache Flink</span>
+                        <span class="tech-tag">Lambda Architecture</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github fa-2x"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <h3>CorSano</h3>
+                    <p>Developed a web-based application for digitizing university sports processes, applying systems modeling with Visual Paradigm and Agile methodologies via JIRA/SCRUM. </p>
+                    <p>Created comprehensive documentation including use cases, prototypes in Figma, and architectural analysis before implementing a functional system with HTML/CSS/JavaScript and LocalStorage persistence. </p>
+                    <p>The project followed an iterative development approach with three sprints.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Web Dev</span>
+                        <span class="tech-tag">Scrum</span>
+                        <span class="tech-tag">System Analysis</span>
+                        <span class="tech-tag">Agile Methodologies</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github fa-2x"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <h3>Statistical Analysis in the Health Field</h3>
+                    <p>A clinical trial evaluated a novel cholesterol treatment through comprehensive statistical analysis using R and Python. </p>
+                    <p>The study employed ANOVA, logistic regression, and power analysis with G*Power software to assess treatment effectiveness and predict outcomes. </p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Statistical Modeling</span>
+                        <span class="tech-tag">ANOVA</span>
+                        <span class="tech-tag">Regression</span>
+                        <span class="tech-tag">R</span>
+                        <span class="tech-tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github fa-2x"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <h3>Health impact on productivity</h3>
+                    <p>A study was conducted to examine certain parameters related to mental and physical health and their impact on productivity.</p>
+                    <p>A questionnaire was developed to gather data and we used Excel and SPSS to do Exploratory Data Analysis and Statistical Tests.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Statistics</span>
+                        <span class="tech-tag">SPSS</span>
+                        <span class="tech-tag">Data Visualization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github fa-2x"></i></a>
+                    </div>
+                </div>
+
+                <div class="project-card fade-in">
+                    <h3>Graduate Seminar on Game Theory</h3>
+                    <p>Analyzed impartial combinatorial games (Nim, Hackenbush), deriving winning strategies and safe positions through mathematical modeling, implementing winning algorithms </p>
+                    <p>Modeled economic competition (Cournot/Bertrand) by developing a Python simulation with matplotlib visualization.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Game Theory</span>
+                        <span class="tech-tag">Combinatory</span>
+                        <span class="tech-tag">Algorithms</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link"><i class="fab fa-github fa-2x"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; 2025 José Nunes. Building the future with data.</p>
+            <p>   
+                <a href="https://github.com/nunes-data" class="project-link"><i class="fab fa-github fa-2x"></i></a>
+                <a href="https://www.linkedin.com/in/databynunes" class="project-link"><i class="fab fa-linkedin fa-2x"></i></a>
+                <a href="https://www.instagram.com/jfnunes22" class="project-link"><i class="fab fa-instagram fa-2x"></i></a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="portfolio.js"></script>
+</body>
+</html>
