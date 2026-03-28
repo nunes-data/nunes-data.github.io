@@ -23,11 +23,11 @@
 </nav>
 
 <section class="hero" id="home">
-    <div class="container hero-grid">
-        <div class="hero-text">
+    <div class="container hero-side-by-side">
+        <div class="hero-text-content">
             <p class="hero-eyebrow">Machine Learning · Deep Learning · Mathematics</p>
             <h1>Building models<br>that <em>actually</em><br>generalise.</h1>
-            <p>MSc candidate in Data Analysis & Engineering. I sit at the intersection of rigorous mathematics and applied ML — from time series forecasting to optimisation algorithms.</p>
+            <p>MSc candidate in Data Analysis & Engineering. I sit at the intersection of rigorous mathematics and applied ML.</p>
             <div class="hero-tags">
                 <span class="hero-tag">Neural Networks</span>
                 <span class="hero-tag">Time Series</span>
@@ -40,16 +40,13 @@
                 <a href="#about" class="btn-secondary">About me →</a>
             </div>
         </div>
-        <div class="hero-viz">
+        <div class="hero-viz-content">
             <svg class="neural-network" viewBox="0 0 700 650" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <linearGradient id="nnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                        <stop offset="0%" style="stop-color:#c8a96e"/>
-                        <stop offset="100%" style="stop-color:#7eb8c9"/>
+                        <stop offset="0%" style="stop-color:#c8a96e"/><stop offset="100%" style="stop-color:#7eb8c9"/>
                     </linearGradient>
-                    <filter id="glow">
-                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                    </filter>
+                    <filter id="glow"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
                 </defs>
                 <g class="connections"></g>
                 <g class="nodes-container"></g>
@@ -61,101 +58,77 @@
 <section class="about" id="about">
     <div class="container">
         <p class="section-label">Experience</p>
-        <div class="experience-container">
-            <div class="exp-tabs">
+        <div class="exp-side-grid">
+            <div class="exp-tabs-list">
                 <button class="tab-btn active" onclick="openTab(event, 'google')">GOOGLE</button>
                 <button class="tab-btn" onclick="openTab(event, 'pinterest')">PINTEREST</button>
                 <button class="tab-btn" onclick="openTab(event, 'amazon')">AMAZON</button>
                 <button class="tab-btn" onclick="openTab(event, 'wattpad')">WATTPAD</button>
             </div>
-            <div class="exp-content">
+            <div class="exp-panels">
                 <div id="google" class="tab-pane active">
                     <h3>Software Engineer @ <span class="highlight">Google</span></h3>
-                    <p class="date">JAN 2025 – PRESENT</p>
-                    <ul>
-                        <li>Built and launched large-scale ML-driven autobidding models at Google scale, influencing decisions across millions of users.</li>
-                        <li>Led end-to-end model development for Proxybidder ML systems, driving multi-million-dollar revenue impact.</li>
+                    <p class="exp-date">JAN 2025 – PRESENT</p>
+                    <ul class="exp-list">
+                        <li>Built and launched large-scale ML-driven autobidding models at Google scale.</li>
+                        <li>Led end-to-end model development for Proxybidder ML systems.</li>
                     </ul>
                 </div>
                 <div id="pinterest" class="tab-pane">
                     <h3>ML Engineer @ <span class="highlight">Pinterest</span></h3>
-                    <p class="date">2023 – 2024</p>
-                    <ul>
-                        <li>Developed recommendation engine ranking algorithms using graph neural networks.</li>
+                    <p class="exp-date">2023 – 2024</p>
+                    <ul class="exp-list">
+                        <li>Developed recommendation engines using graph neural networks.</li>
                     </ul>
                 </div>
-                </div>
+            </div>
         </div>
 
-        <p class="section-label" style="margin-top:4rem">Technical Stack</p>
-        <div class="tech-stack-terminal">
-            <p><span>ML_CORE:</span> ["Neural Networks", "Transformers", "NLP"]</p>
-            <p><span>MATH:</span> ["Linear Algebra", "Optimisation", "Statistics"]</p>
-            <p><span>CODE:</span> ["Python", "R", "SQL", "PyTorch"]</p>
+        <div class="tech-stack-container">
+            <p class="section-label">Technical Stack</p>
+            <div class="terminal-box">
+                <p><span>ML_CORE:</span> ["Neural Networks", "Transformers", "NLP"]</p>
+                <p><span>MATH:</span> ["Linear Algebra", "Optimisation", "Statistics"]</p>
+                <p><span>CODE:</span> ["Python", "R", "SQL", "PyTorch"]</p>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="projects" id="projects">
     <div class="container">
-        <div class="projects-header-flex">
-            <div class="coffee-box">
-                <canvas id="coffeeCanvas" width="400" height="300"></canvas>
+        <div class="project-header-section">
+            <div class="coffee-canvas-wrapper">
+                <canvas id="coffeeCanvas" width="350" height="280"></canvas>
             </div>
-            <div>
-                <p class="section-label">Selected Work</p>
-                <h2>Projects</h2>
+            <div class="project-title-text">
+                <p class="section-label">Portfolio</p>
+                <h2>Selected Projects</h2>
             </div>
         </div>
         
         <div class="projects-grid">
             <div class="project-card">
-                <h3>Coal Tracking: Production Management</h3>
-                <p>Platform for managing charcoal production processes, including automatic stock updates, revenue tracking, and profit calculation on each sale event.</p>
+                <h3>Coal Tracking: Management</h3>
+                <p>Platform for managing charcoal production processes, including automatic stock updates and revenue tracking.</p>
                 <div class="tech-tags"><span class="tech-tag">MySQL</span><span class="tech-tag">C#</span></div>
-                <div class="project-links"><a href="https://github.com/nunes-data/Databases" class="github-link"><i class="fab fa-github"></i></a></div>
+                <div class="project-links"><a href="https://github.com/nunes-data/Databases" class="git-only"><i class="fab fa-github"></i></a></div>
             </div>
-
             <div class="project-card">
                 <h3>CorSano</h3>
-                <p>Web application for digitising university sports processes. Systems modelling with Visual Paradigm, Agile via JIRA/SCRUM, and three-sprint iterative delivery.</p>
+                <p>Web application for digitising university sports processes. Systems modelling and Agile via JIRA/SCRUM.</p>
                 <div class="tech-tags"><span class="tech-tag">Web Dev</span><span class="tech-tag">Scrum</span></div>
-                <div class="project-links"><a href="https://github.com/nunes-data/Systems-Modeling-and-Analysis" class="github-link"><i class="fab fa-github"></i></a></div>
+                <div class="project-links"><a href="https://github.com/nunes-data/Systems-Modeling-and-Analysis" class="git-only"><i class="fab fa-github"></i></a></div>
             </div>
-
             <div class="project-card">
-                <h3>Statistical Analysis — Health</h3>
-                <p>Clinical trial evaluation of a novel cholesterol treatment using ANOVA, logistic regression, and G*Power-based power analysis in R and Python.</p>
-                <div class="tech-tags"><span class="tech-tag">R</span><span class="tech-tag">Python</span><span class="tech-tag">ANOVA</span></div>
-                <div class="project-links"><a href="https://github.com/nunes-data/Statistical-Models" class="github-link"><i class="fab fa-github"></i></a></div>
+                <h3>Statistical Health Analysis</h3>
+                <p>Clinical trial evaluation of novel cholesterol treatments using ANOVA and regression in R/Python.</p>
+                <div class="tech-tags"><span class="tech-tag">R</span><span class="tech-tag">ANOVA</span></div>
+                <div class="project-links"><a href="https://github.com/nunes-data/Statistical-Models" class="git-only"><i class="fab fa-github"></i></a></div>
             </div>
-
-            <div class="project-card">
-                <h3>Health & Productivity Study</h3>
-                <p>Survey-based research examining mental/physical health parameters and their effect on productivity. EDA and statistical tests in Excel and SPSS.</p>
-                <div class="tech-tags"><span class="tech-tag">Statistics</span><span class="tech-tag">SPSS</span></div>
-                <div class="project-links"><a href="https://github.com/nunes-data/Complements-of-Statistics" class="github-link"><i class="fab fa-github"></i></a></div>
             </div>
-
-            <div class="project-card">
-                <h3>Seminar: Game Theory</h3>
-                <p>Analysed impartial combinatorial games (Nim, Hackenbush) and economic competition models (Cournot/Bertrand) with Python simulations.</p>
-                <div class="tech-tags"><span class="tech-tag">Game Theory</span><span class="tech-tag">Python</span></div>
-                <div class="project-links"><a href="https://github.com/nunes-data/BSc_seminar" class="github-link"><i class="fab fa-github"></i></a></div>
-            </div>
-        </div>
     </div>
 </section>
-
-<footer class="footer" id="contact">
-    <div class="container footer-centered">
-        <p>© 2025 José Nunes · Building the future with data.</p>
-        <div class="socials">
-            <a href="https://github.com/nunes-data"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/databynunes"><i class="fab fa-linkedin"></i></a>
-        </div>
-    </div>
-</footer>
 
 <script src="portfolio.js"></script>
 </body>
