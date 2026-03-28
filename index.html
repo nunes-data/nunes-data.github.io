@@ -23,11 +23,18 @@
 </nav>
 
 <section class="hero" id="home">
-    <div class="hero-grid container">
+    <div class="container hero-grid">
         <div class="hero-text">
             <p class="hero-eyebrow">Machine Learning · Deep Learning · Mathematics</p>
             <h1>Building models<br>that <em>actually</em><br>generalise.</h1>
-            <p>MSc candidate in Data Analysis & Engineering. I sit at the intersection of rigorous mathematics and applied ML.</p>
+            <p>MSc candidate in Data Analysis & Engineering. I sit at the intersection of rigorous mathematics and applied ML — from time series forecasting to optimisation algorithms.</p>
+            <div class="hero-tags">
+                <span class="hero-tag">Neural Networks</span>
+                <span class="hero-tag">Time Series</span>
+                <span class="hero-tag">Optimisation</span>
+                <span class="hero-tag">Statistical Modelling</span>
+                <span class="hero-tag">Python · R</span>
+            </div>
             <div class="cta-row">
                 <a href="#projects" class="btn-primary">View Projects</a>
                 <a href="#about" class="btn-secondary">About me →</a>
@@ -54,47 +61,45 @@
 <section class="about" id="about">
     <div class="container">
         <p class="section-label">Experience</p>
-        <div class="experience-wrapper">
+        <div class="experience-container">
             <div class="exp-tabs">
-                <button class="tab-link active" onclick="openExp(event, 'Google')">GOOGLE</button>
-                <button class="tab-link" onclick="openExp(event, 'Pinterest')">PINTEREST</button>
-                <button class="tab-link" onclick="openExp(event, 'Amazon')">AMAZON</button>
-                <button class="tab-link" onclick="openExp(event, 'Wattpad')">WATTPAD</button>
-                <div class="tab-indicator"></div>
+                <button class="tab-btn active" onclick="openTab(event, 'google')">GOOGLE</button>
+                <button class="tab-btn" onclick="openTab(event, 'pinterest')">PINTEREST</button>
+                <button class="tab-btn" onclick="openTab(event, 'amazon')">AMAZON</button>
+                <button class="tab-btn" onclick="openTab(event, 'wattpad')">WATTPAD</button>
             </div>
-            <div id="Google" class="tab-content active">
-                <h3>Software Engineer @ <span>Google</span></h3>
-                <p class="exp-date">JAN 2025 - PRESENT</p>
-                <ul>
-                    <li>Built and launched large-scale ML-driven autobidding models at Google scale, influencing decisions across millions of users.</li>
-                    <li>Led end-to-end model development for Proxybidder ML systems, driving multi-million-dollar revenue impact.</li>
-                </ul>
-            </div>
-            <div id="Pinterest" class="tab-content">
-                <h3>ML Engineer @ <span>Pinterest</span></h3>
-                <p class="exp-date">2023 - 2024</p>
-                <ul><li>Developed recommendation engine ranking algorithms using graph neural networks.</li></ul>
-            </div>
-            </div>
-
-        <p class="section-label" style="margin-top: 5rem;">Technical Stack</p>
-        <div class="skills-tech-grid">
-            <div class="skill-terminal">
-                <div class="term-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
-                <div class="term-body">
-                    <p><span class="prm">ML_CORE:</span> ["Neural Networks", "Transformers", "NLP"]</p>
-                    <p><span class="prm">MATH:</span> ["Linear Algebra", "Optimisation", "Statistics"]</p>
-                    <p><span class="prm">CODE:</span> ["Python", "R", "SQL", "PyTorch"]</p>
+            <div class="exp-content">
+                <div id="google" class="tab-pane active">
+                    <h3>Software Engineer @ <span class="highlight">Google</span></h3>
+                    <p class="date">JAN 2025 – PRESENT</p>
+                    <ul>
+                        <li>Built and launched large-scale ML-driven autobidding models at Google scale, influencing decisions across millions of users.</li>
+                        <li>Led end-to-end model development for Proxybidder ML systems, driving multi-million-dollar revenue impact.</li>
+                    </ul>
                 </div>
-            </div>
+                <div id="pinterest" class="tab-pane">
+                    <h3>ML Engineer @ <span class="highlight">Pinterest</span></h3>
+                    <p class="date">2023 – 2024</p>
+                    <ul>
+                        <li>Developed recommendation engine ranking algorithms using graph neural networks.</li>
+                    </ul>
+                </div>
+                </div>
+        </div>
+
+        <p class="section-label" style="margin-top:4rem">Technical Stack</p>
+        <div class="tech-stack-terminal">
+            <p><span>ML_CORE:</span> ["Neural Networks", "Transformers", "NLP"]</p>
+            <p><span>MATH:</span> ["Linear Algebra", "Optimisation", "Statistics"]</p>
+            <p><span>CODE:</span> ["Python", "R", "SQL", "PyTorch"]</p>
         </div>
     </div>
 </section>
 
 <section class="projects" id="projects">
     <div class="container">
-        <div class="project-header-grid">
-            <div class="coffee-wrap">
+        <div class="projects-header-flex">
+            <div class="coffee-box">
                 <canvas id="coffeeCanvas" width="400" height="300"></canvas>
             </div>
             <div>
@@ -102,23 +107,52 @@
                 <h2>Projects</h2>
             </div>
         </div>
+        
         <div class="projects-grid">
             <div class="project-card">
-                <h3>Coal Tracking</h3>
-                <p>Platform for managing charcoal production processes and automatic stock updates.</p>
+                <h3>Coal Tracking: Production Management</h3>
+                <p>Platform for managing charcoal production processes, including automatic stock updates, revenue tracking, and profit calculation on each sale event.</p>
                 <div class="tech-tags"><span class="tech-tag">MySQL</span><span class="tech-tag">C#</span></div>
-                <div class="project-links"><a href="#" class="git-icon"><i class="fab fa-github"></i></a></div>
+                <div class="project-links"><a href="https://github.com/nunes-data/Databases" class="github-link"><i class="fab fa-github"></i></a></div>
             </div>
+
+            <div class="project-card">
+                <h3>CorSano</h3>
+                <p>Web application for digitising university sports processes. Systems modelling with Visual Paradigm, Agile via JIRA/SCRUM, and three-sprint iterative delivery.</p>
+                <div class="tech-tags"><span class="tech-tag">Web Dev</span><span class="tech-tag">Scrum</span></div>
+                <div class="project-links"><a href="https://github.com/nunes-data/Systems-Modeling-and-Analysis" class="github-link"><i class="fab fa-github"></i></a></div>
             </div>
+
+            <div class="project-card">
+                <h3>Statistical Analysis — Health</h3>
+                <p>Clinical trial evaluation of a novel cholesterol treatment using ANOVA, logistic regression, and G*Power-based power analysis in R and Python.</p>
+                <div class="tech-tags"><span class="tech-tag">R</span><span class="tech-tag">Python</span><span class="tech-tag">ANOVA</span></div>
+                <div class="project-links"><a href="https://github.com/nunes-data/Statistical-Models" class="github-link"><i class="fab fa-github"></i></a></div>
+            </div>
+
+            <div class="project-card">
+                <h3>Health & Productivity Study</h3>
+                <p>Survey-based research examining mental/physical health parameters and their effect on productivity. EDA and statistical tests in Excel and SPSS.</p>
+                <div class="tech-tags"><span class="tech-tag">Statistics</span><span class="tech-tag">SPSS</span></div>
+                <div class="project-links"><a href="https://github.com/nunes-data/Complements-of-Statistics" class="github-link"><i class="fab fa-github"></i></a></div>
+            </div>
+
+            <div class="project-card">
+                <h3>Seminar: Game Theory</h3>
+                <p>Analysed impartial combinatorial games (Nim, Hackenbush) and economic competition models (Cournot/Bertrand) with Python simulations.</p>
+                <div class="tech-tags"><span class="tech-tag">Game Theory</span><span class="tech-tag">Python</span></div>
+                <div class="project-links"><a href="https://github.com/nunes-data/BSc_seminar" class="github-link"><i class="fab fa-github"></i></a></div>
+            </div>
+        </div>
     </div>
 </section>
 
 <footer class="footer" id="contact">
     <div class="container footer-centered">
-        <p>© 2025 José Nunes · ☕ Powered by gradient descent</p>
-        <div class="footer-links">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+        <p>© 2025 José Nunes · Building the future with data.</p>
+        <div class="socials">
+            <a href="https://github.com/nunes-data"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/databynunes"><i class="fab fa-linkedin"></i></a>
         </div>
     </div>
 </footer>
