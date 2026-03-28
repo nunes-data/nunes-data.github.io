@@ -1,118 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>José Nunes — ML & Data Science</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ML Portfolio</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lora&family=DM+Sans&family=JetBrains+Mono&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="portfolio.css">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=JetBrains+Mono&family=Lora&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-    <div class="container navbar-centered">
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
+    <div class="nav-container">
+        <div class="logo">JN</div>
+        <button id="menuBtn">☰</button>
+        <ul id="navLinks">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#exp">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
         </ul>
-        <button class="mobile-menu-btn">☰</button>
     </div>
 </nav>
 
-<section class="hero" id="home">
-    <div class="container hero-side-by-side">
-        <div class="hero-text-content">
-            <p class="hero-eyebrow">Machine Learning · Deep Learning · Mathematics</p>
-            <h1>Building models<br>that <em>actually</em><br>generalise.</h1>
-            <p>MSc candidate in Data Analysis & Engineering.</p>
+<!-- HERO -->
+<section id="hero">
+    <div class="hero-grid">
+
+        <div class="hero-text">
+            <p class="tag">ML · Deep Learning · Maths</p>
+            <h1>Building models that actually generalise</h1>
+            <p>Data Science MSc — blending theory with real-world ML systems.</p>
         </div>
 
-        <div class="hero-viz-content">
-            <svg class="neural-network" viewBox="0 0 700 650">
-                <defs>
-                    <linearGradient id="nnGrad">
-                        <stop offset="0%" stop-color="#c8a96e"/>
-                        <stop offset="100%" stop-color="#7eb8c9"/>
-                    </linearGradient>
-                    <filter id="glow">
-                        <feGaussianBlur stdDeviation="2"/>
-                    </filter>
-                </defs>
-                <g class="connections"></g>
-                <g class="nodes-container"></g>
-            </svg>
-        </div>
+        <svg id="nn"></svg>
+
     </div>
 </section>
 
-<section id="about">
-    <div class="container">
-        <p class="section-label">Experience</p>
+<!-- EXPERIENCE -->
+<section id="exp">
+    <h2>Experience</h2>
 
-        <div class="exp-side-grid">
-            <div class="exp-tabs-list">
-                <button class="tab-btn active" onclick="openTab(event, 'google')">GOOGLE</button>
-                <button class="tab-btn" onclick="openTab(event, 'pinterest')">PINTEREST</button>
-                <button class="tab-btn" onclick="openTab(event, 'amazon')">AMAZON</button>
-                <button class="tab-btn" onclick="openTab(event, 'wattpad')">WATTPAD</button>
+    <div class="exp-container">
+        <div class="tabs">
+            <button class="tab active" data-tab="g">Google</button>
+            <button class="tab" data-tab="p">Pinterest</button>
+            <button class="tab" data-tab="a">Amazon</button>
+        </div>
+
+        <div class="content">
+            <div class="panel active" id="g">
+                <h3>Google</h3>
+                <p>ML systems, bidding models</p>
             </div>
 
-            <div class="exp-panels">
-                <div id="google" class="tab-pane active">
-                    <h3>Software Engineer @ <span class="highlight">Google</span></h3>
-                    <p>2025 – Present</p>
-                </div>
+            <div class="panel" id="p">
+                <h3>Pinterest</h3>
+                <p>Recommendation systems</p>
+            </div>
 
-                <div id="pinterest" class="tab-pane">
-                    <h3>ML Engineer @ <span class="highlight">Pinterest</span></h3>
-                </div>
-
-                <div id="amazon" class="tab-pane">
-                    <h3>ML Engineer @ <span class="highlight">Amazon</span></h3>
-                </div>
-
-                <div id="wattpad" class="tab-pane">
-                    <h3>Data Scientist @ <span class="highlight">Wattpad</span></h3>
-                </div>
+            <div class="panel" id="a">
+                <h3>Amazon</h3>
+                <p>Forecasting + optimization</p>
             </div>
         </div>
     </div>
 </section>
 
+<!-- PROJECTS -->
 <section id="projects">
-    <div class="container">
+    <h2>Projects</h2>
 
-        <div class="project-header-section">
-            <canvas id="coffeeCanvas" width="350" height="280"></canvas>
-            <div>
-                <h2>Selected Projects</h2>
-            </div>
-        </div>
-
-        <div class="projects-grid">
-            <div class="project-card">
-                <h3>Coal Tracking</h3>
-                <p>Stock + revenue system</p>
-            </div>
-
-            <div class="project-card">
-                <h3>CorSano</h3>
-                <p>Sports platform</p>
-            </div>
-
-            <div class="project-card">
-                <h3>Health Analysis</h3>
-                <p>Statistical modelling</p>
-            </div>
-        </div>
-
+    <div class="grid">
+        <div class="card">Coal Tracking</div>
+        <div class="card">CorSano</div>
+        <div class="card">Health Stats</div>
     </div>
 </section>
 
-<script src="portfolio.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
