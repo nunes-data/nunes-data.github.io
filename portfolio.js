@@ -1,74 +1,86 @@
-// Experience Tabs
-function openTab(evt, tabName) {
-    const panes = document.getElementsByClassName("tab-pane");
-    for (let i = 0; i < panes.length; i++) panes[i].classList.remove("active");
-    const btns = document.getElementsByClassName("tab-btn");
-    for (let i = 0; i < btns.length; i++) btns[i].classList.remove("active");
-    document.getElementById(tabName).classList.add("active");
-    evt.currentTarget.classList.add("active");
-}
+document.addEventListener("DOMContentLoaded", function () {
 
-// Neural Network Viz
-(function() {
-    const layers = [
-        {x: 80,  nodes: [150, 250, 350, 450], color: '#c8a96e'}, 
-        {x: 300, nodes: [100, 200, 300, 400, 500, 600], color: '#7eb8c9'}, 
-        {x: 520, nodes: [150, 250, 350, 450], color: '#c8a96e'}
-    ];
-    const svg = document.querySelector('.neural-network');
-    if(!svg) return;
-    const connGroup = svg.querySelector('.connections');
-    const nodeGroup = svg.querySelector('.nodes-container');
+    console.log("JS LOADED");
 
-    layers.forEach((layer, i) => {
-        if (i < layers.length - 1) {
-            const next = layers[i+1];
-            layer.nodes.forEach(fy => {
-                next.nodes.forEach(ty => {
-                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                    line.setAttribute('x1', layer.x); line.setAttribute('y1', fy);
-                    line.setAttribute('x2', next.x); line.setAttribute('y2', ty);
-                    line.setAttribute('stroke', 'url(#nnGrad)'); line.setAttribute('opacity', '0.12');
-                    connGroup.appendChild(line);
-                });
-            });
-        }
-        layer.nodes.forEach(ny => {
-            const circ = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            circ.setAttribute('cx', layer.x); circ.setAttribute('cy', ny); circ.setAttribute('r', '7');
-            circ.setAttribute('fill', layer.color); circ.setAttribute('filter', 'url(#glow)');
-            nodeGroup.appendChild(circ);
+    // =====================
+    // MOBILE MENU
+    // =====================
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    if (menuBtn && navLinks) {
+        menuBtn.addEventListener("click", function () {
+            navLinks.classList.toggle("open");
+        });
+    }
+
+    // =====================
+    // TABS
+    // =====================
+    const tabs = document.querySelectorAll(".tab");
+    const panels = document.querySelectorAll(".panel");
+
+    tabs.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+
+            tabs.forEach(b => b.classList.remove("active"));
+            panels.forEach(p => p.classList.remove("active"));
+
+            btn.classList.add("active");
+
+            const targetId = btn.getAttribute("data-tab");
+            const target = document.getElementById(targetId);
+
+            if (target) {
+                target.classList.add("active");
+            }
         });
     });
-})();
 
-// Coffee Pixel Art (Corrected Scaling)
-(function() {
-    const canvas = document.getElementById('coffeeCanvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const PS = 9; // Large enough for the project section header
+    // =====================
+    // NEURAL NETWORK
+    // =====================
+    const svg = document.getElementById("nn");
 
-    const colors = { 'K': '#0d0d0d', 'W': '#ffffff', 'c': '#2d1606', 'r': '#b45309', 'g': '#d1d5db' };
-    const art = [
-        '.....KKKKKKKKKKKKKKKKKKKK.....',
-        '..KKKWWWWWWWWWWWWWWWWWWWWKKK..',
-        '..KWWKKKKKKKKKKKKKKKKKKKKWWK..',
-        '..KWKccccccccccccccccccccKWK..',
-        '..KWKccrrrrrreeeeeerrrrrccKWK..',
-        '..KWKccccccccccccccccccccKWK..',
-        '..KWWWWWWWWWWWWWWWWWWwwwwgKKKK',
-        '..KWWWWWWWWWWWWWWWWWWwwwwgKWWK',
-        '..KWWWWWWWWWWWWWWWWWWwwwwgKKKK',
-        '....KKKKKKKKKKKKKKKKKKKKKK....'
-    ];
+    if (svg) {
+        const width = svg.clientWidth || 400;
+        const height = svg.clientHeight || 300;
 
-    art.forEach((row, ry) => {
-        for (let c = 0; c < row.length; c++) {
-            if (colors[row[c]]) {
-                ctx.fillStyle = colors[row[c]];
-                ctx.fillRect(c * PS, ry * PS, PS, PS);
-            }
+        const nodes = [];
+
+        // create nodes
+        for (let i = 0; i < 20; i++) {
+            const x = Math.random() * width;
+            const y = Math.random() * height;
+
+            nodes.push({ x, y });
+
+            const c = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+            c.setAttribute("cx", x);
+            c.setAttribute("cy", y);
+            c.setAttribute("r", 4);
+            c.setAttribute("fill", "#7eb8c9");
+
+            svg.appendChild(c);
         }
-    });
-})();
+
+        // connect nodes
+        nodes.forEach(n1 => {
+            nodes.forEach(n2 => {
+
+                if (Math.random() > 0.9) return;
+
+                const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                line.setAttribute("x1", n1.x);
+                line.setAttribute("y1", n1.y);
+                line.setAttribute("x2", n2.x);
+                line.setAttribute("y2", n2.y);
+                line.setAttribute("stroke", "#c8a96e");
+                line.setAttribute("opacity", "0.2");
+
+                svg.appendChild(line);
+            });
+        });
+    }
+
+});
