@@ -11,8 +11,7 @@
 <body>
 
 <nav id="mainNav">
-    <div class="container">
-        <div class="logo"><span>~/</span>jnunes<span>.ml</span></div>
+    <div class="container navbar-centered">
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -24,78 +23,17 @@
 </nav>
 
 <section class="hero" id="home">
-    <div class="hero-photo-wrap">
-        <div class="hero-photo-canvas">
-            <canvas id="coffeeCanvas" width="760" height="920"></canvas>
-        </div>
-    </div>
-
-    <div class="hero-text">
-        <p class="hero-eyebrow">Machine Learning · Deep Learning · Mathematics</p>
-        <h1>Building models<br>that <em>actually</em><br>generalise.</h1>
-        <p>MSc candidate in Data Analysis & Engineering. I sit at the intersection of rigorous mathematics and applied ML — from time series forecasting to optimisation algorithms.</p>
-        <div class="hero-tags">
-            <span class="hero-tag">Neural Networks</span>
-            <span class="hero-tag">Time Series</span>
-            <span class="hero-tag">Optimisation</span>
-            <span class="hero-tag">Statistical Modelling</span>
-            <span class="hero-tag">Python · R</span>
-        </div>
-        <div class="cta-row">
-            <a href="#projects" class="btn-primary">View Projects</a>
-            <a href="#about" class="btn-secondary">About me →</a>
-        </div>
-    </div>
-</section>
-
-<hr class="section-divider">
-
-<section class="about" id="about">
-    <p class="section-label fade-in">About</p>
-    <div class="about-grid">
-        <div class="about-text fade-in">
-            <h2>Mathematical rigour,<br>practical impact.</h2>
-            <p>With a foundation in pure mathematics and a growing expertise in machine learning, I focus on building solutions that are both theoretically sound and production-ready.</p>
-            <p>My current research touches time series analysis, deep learning architectures, and mathematical optimisation.</p>
-            <p>When I'm not debugging gradient flows, I'm probably on my third espresso.</p>
-        </div>
-        <div class="skills-list fade-in">
-            <div class="skill-card">
-                <h4>ML & Deep Learning</h4>
-                <p>Neural Networks, Transformers, Ensemble Methods, NLP</p>
-            </div>
-            <div class="skill-card">
-                <h4>Time Series</h4>
-                <p>Forecasting, ARIMA/SARIMA, LSTM, signal processing</p>
-            </div>
-            <div class="skill-card">
-                <h4>Optimisation</h4>
-                <p>Gradient methods, convex optimisation, metaheuristics</p>
-            </div>
-            <div class="skill-card">
-                <h4>Mathematics</h4>
-                <p>Linear Algebra, Probability, Statistics, Game Theory</p>
-            </div>
-            <div class="skill-card">
-                <h4>Programming</h4>
-                <p>Python, R, SQL, PyTorch, TensorFlow, Scikit-learn</p>
-            </div>
-            <div class="skill-card">
-                <h4>Data Analysis</h4>
-                <p>EDA, Statistical Testing, Visualisation, Big Data</p>
+    <div class="hero-grid container">
+        <div class="hero-text">
+            <p class="hero-eyebrow">Machine Learning · Deep Learning · Mathematics</p>
+            <h1>Building models<br>that <em>actually</em><br>generalise.</h1>
+            <p>MSc candidate in Data Analysis & Engineering. I sit at the intersection of rigorous mathematics and applied ML.</p>
+            <div class="cta-row">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#about" class="btn-secondary">About me →</a>
             </div>
         </div>
-    </div>
-</section>
-
-<div class="neural-section">
-    <div class="neural-inner">
-        <div class="neural-text fade-in">
-            <h3>Architecture matters.</h3>
-            <p>Every layer, every weight, every activation function is a design decision. The network on the right represents the depth I think about — not just stacking layers, but understanding what each transformation does to the data manifold.</p>
-            <p class="arch-label">// 8 → 12 → 10 → 8 → 4 · fully connected · animated forward pass</p>
-        </div>
-        <div class="neural-svg-wrap fade-in">
+        <div class="hero-viz">
             <svg class="neural-network" viewBox="0 0 700 650" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <linearGradient id="nnGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -103,11 +41,7 @@
                         <stop offset="100%" style="stop-color:#7eb8c9"/>
                     </linearGradient>
                     <filter id="glow">
-                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-                        <feMerge>
-                            <feMergeNode in="coloredBlur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
+                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
                     </filter>
                 </defs>
                 <g class="connections"></g>
@@ -115,62 +49,77 @@
             </svg>
         </div>
     </div>
-</div>
+</section>
 
-<section class="projects" id="projects">
-    <div class="projects-header">
-        <div>
-            <p class="section-label fade-in">Projects</p>
-            <h2 class="fade-in">Selected work</h2>
-        </div>
-    </div>
-    <div class="projects-grid">
-        <div class="project-card fade-in">
-            <h3>Coal Tracking: Production Management</h3>
-            <p>Platform for managing charcoal production processes, including automatic stock updates and revenue tracking.</p>
-            <div class="tech-tags">
-                <span class="tech-tag">MySQL</span>
-                <span class="tech-tag">C#</span>
+<section class="about" id="about">
+    <div class="container">
+        <p class="section-label">Experience</p>
+        <div class="experience-wrapper">
+            <div class="exp-tabs">
+                <button class="tab-link active" onclick="openExp(event, 'Google')">GOOGLE</button>
+                <button class="tab-link" onclick="openExp(event, 'Pinterest')">PINTEREST</button>
+                <button class="tab-link" onclick="openExp(event, 'Amazon')">AMAZON</button>
+                <button class="tab-link" onclick="openExp(event, 'Wattpad')">WATTPAD</button>
+                <div class="tab-indicator"></div>
             </div>
-            <div class="project-links">
-                <a href="https://github.com/nunes-data/Databases"><i class="fab fa-github"></i> GitHub</a>
+            <div id="Google" class="tab-content active">
+                <h3>Software Engineer @ <span>Google</span></h3>
+                <p class="exp-date">JAN 2025 - PRESENT</p>
+                <ul>
+                    <li>Built and launched large-scale ML-driven autobidding models at Google scale, influencing decisions across millions of users.</li>
+                    <li>Led end-to-end model development for Proxybidder ML systems, driving multi-million-dollar revenue impact.</li>
+                </ul>
             </div>
-        </div>
-        <div class="project-card fade-in">
-            <h3>CorSano</h3>
-            <p>Digitising university sports processes using Agile/Scrum. Prototypes in Figma and iterative delivery.</p>
-            <div class="tech-tags">
-                <span class="tech-tag">Web Dev</span>
-                <span class="tech-tag">Scrum</span>
+            <div id="Pinterest" class="tab-content">
+                <h3>ML Engineer @ <span>Pinterest</span></h3>
+                <p class="exp-date">2023 - 2024</p>
+                <ul><li>Developed recommendation engine ranking algorithms using graph neural networks.</li></ul>
             </div>
-            <div class="project-links">
-                <a href="https://github.com/nunes-data/Systems-Modeling-and-Analysis"><i class="fab fa-github"></i> GitHub</a>
             </div>
-        </div>
-        <div class="project-card fade-in">
-            <h3>Statistical Health Analysis</h3>
-            <p>Clinical trial evaluation using ANOVA and logistic regression in R and Python.</p>
-            <div class="tech-tags">
-                <span class="tech-tag">R</span>
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Statistics</span>
-            </div>
-            <div class="project-links">
-                <a href="https://github.com/nunes-data/Statistical-Models"><i class="fab fa-github"></i> GitHub</a>
+
+        <p class="section-label" style="margin-top: 5rem;">Technical Stack</p>
+        <div class="skills-tech-grid">
+            <div class="skill-terminal">
+                <div class="term-header"><span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span></div>
+                <div class="term-body">
+                    <p><span class="prm">ML_CORE:</span> ["Neural Networks", "Transformers", "NLP"]</p>
+                    <p><span class="prm">MATH:</span> ["Linear Algebra", "Optimisation", "Statistics"]</p>
+                    <p><span class="prm">CODE:</span> ["Python", "R", "SQL", "PyTorch"]</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<footer class="footer" id="contact">
-    <div class="footer-left">
-        <p>© 2025 José Nunes · Building the future with data.</p>
-        <p class="coffee-note">☕ Powered by espresso & gradient descent</p>
+<section class="projects" id="projects">
+    <div class="container">
+        <div class="project-header-grid">
+            <div class="coffee-wrap">
+                <canvas id="coffeeCanvas" width="400" height="300"></canvas>
+            </div>
+            <div>
+                <p class="section-label">Selected Work</p>
+                <h2>Projects</h2>
+            </div>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Coal Tracking</h3>
+                <p>Platform for managing charcoal production processes and automatic stock updates.</p>
+                <div class="tech-tags"><span class="tech-tag">MySQL</span><span class="tech-tag">C#</span></div>
+                <div class="project-links"><a href="#" class="git-icon"><i class="fab fa-github"></i></a></div>
+            </div>
+            </div>
     </div>
-    <div class="footer-links">
-        <a href="https://github.com/nunes-data"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/databynunes"><i class="fab fa-linkedin"></i></a>
-        <a href="https://www.instagram.com/jfnunes22"><i class="fab fa-instagram"></i></a>
+</section>
+
+<footer class="footer" id="contact">
+    <div class="container footer-centered">
+        <p>© 2025 José Nunes · ☕ Powered by gradient descent</p>
+        <div class="footer-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
     </div>
 </footer>
 
