@@ -1,74 +1,102 @@
-// Experience Tabs
+// Tabs (SAFE VERSION)
 function openTab(evt, tabName) {
-    const panes = document.getElementsByClassName("tab-pane");
-    for (let i = 0; i < panes.length; i++) panes[i].classList.remove("active");
-    const btns = document.getElementsByClassName("tab-btn");
-    for (let i = 0; i < btns.length; i++) btns[i].classList.remove("active");
-    document.getElementById(tabName).classList.add("active");
+    const panes = document.querySelectorAll(".tab-pane");
+    panes.forEach(p => p.classList.remove("active"));
+
+    const btns = document.querySelectorAll(".tab-btn");
+    btns.forEach(b => b.classList.remove("active"));
+
+    const target = document.getElementById(tabName);
+    if (target) target.classList.add("active");
+
     evt.currentTarget.classList.add("active");
 }
 
-// Neural Network Viz
-(function() {
+// Mobile Menu
+document.querySelector(".mobile-menu-btn")
+?.addEventListener("click", () => {
+    document.querySelector(".nav-links").classList.toggle("open");
+});
+
+// Neural Network
+(function () {
     const layers = [
-        {x: 80,  nodes: [150, 250, 350, 450], color: '#c8a96e'}, 
-        {x: 300, nodes: [100, 200, 300, 400, 500, 600], color: '#7eb8c9'}, 
-        {x: 520, nodes: [150, 250, 350, 450], color: '#c8a96e'}
+        {x: 80, nodes: [150, 250, 350, 450]},
+        {x: 300, nodes: [100, 200, 300, 400, 500]},
+        {x: 520, nodes: [150, 250, 350, 450]}
     ];
+
     const svg = document.querySelector('.neural-network');
-    if(!svg) return;
-    const connGroup = svg.querySelector('.connections');
-    const nodeGroup = svg.querySelector('.nodes-container');
+    if (!svg) return;
+
+    const conn = svg.querySelector('.connections');
+    const nodes = svg.querySelector('.nodes-container');
 
     layers.forEach((layer, i) => {
+
         if (i < layers.length - 1) {
             const next = layers[i+1];
+
             layer.nodes.forEach(fy => {
                 next.nodes.forEach(ty => {
-                    const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-                    line.setAttribute('x1', layer.x); line.setAttribute('y1', fy);
-                    line.setAttribute('x2', next.x); line.setAttribute('y2', ty);
-                    line.setAttribute('stroke', 'url(#nnGrad)'); line.setAttribute('opacity', '0.12');
-                    connGroup.appendChild(line);
+
+                    // random sparsity
+                    if (Math.random() > 0.5) return;
+
+                    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+                    line.setAttribute('x1', layer.x);
+                    line.setAttribute('y1', fy);
+                    line.setAttribute('x2', next.x);
+                    line.setAttribute('y2', ty);
+                    line.setAttribute('stroke', 'url(#nnGrad)');
+                    line.setAttribute('opacity', '0.15');
+                    conn.appendChild(line);
                 });
             });
         }
+
         layer.nodes.forEach(ny => {
-            const circ = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
-            circ.setAttribute('cx', layer.x); circ.setAttribute('cy', ny); circ.setAttribute('r', '7');
-            circ.setAttribute('fill', layer.color); circ.setAttribute('filter', 'url(#glow)');
-            nodeGroup.appendChild(circ);
+            const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+            c.setAttribute('cx', layer.x);
+            c.setAttribute('cy', ny);
+            c.setAttribute('r', 6);
+            c.setAttribute('fill', '#7eb8c9');
+            nodes.appendChild(c);
         });
     });
+
 })();
 
-// Coffee Pixel Art (Corrected Scaling)
-(function() {
+// Coffee Pixel Art (responsive scale)
+(function () {
     const canvas = document.getElementById('coffeeCanvas');
     if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    const PS = 9; // Large enough for the project section header
 
-    const colors = { 'K': '#0d0d0d', 'W': '#ffffff', 'c': '#2d1606', 'r': '#b45309', 'g': '#d1d5db' };
+    const ctx = canvas.getContext('2d');
+
     const art = [
-        '.....KKKKKKKKKKKKKKKKKKKK.....',
-        '..KKKWWWWWWWWWWWWWWWWWWWWKKK..',
-        '..KWWKKKKKKKKKKKKKKKKKKKKWWK..',
-        '..KWKccccccccccccccccccccKWK..',
-        '..KWKccrrrrrreeeeeerrrrrccKWK..',
-        '..KWKccccccccccccccccccccKWK..',
-        '..KWWWWWWWWWWWWWWWWWWwwwwgKKKK',
-        '..KWWWWWWWWWWWWWWWWWWwwwwgKWWK',
-        '..KWWWWWWWWWWWWWWWWWWwwwwgKKKK',
-        '....KKKKKKKKKKKKKKKKKKKKKK....'
+        '...KKKK...',
+        '..KWWWWK..',
+        '..KccccK..',
+        '..KrrrrK..',
+        '..KccccK..',
+        '...KKKK...'
     ];
 
-    art.forEach((row, ry) => {
-        for (let c = 0; c < row.length; c++) {
-            if (colors[row[c]]) {
-                ctx.fillStyle = colors[row[c]];
-                ctx.fillRect(c * PS, ry * PS, PS, PS);
-            }
-        }
+    const PS = canvas.width / art[0].length;
+
+    const colors = {
+        K: '#000',
+        W: '#fff',
+        c: '#2d1606',
+        r: '#b45309'
+    };
+
+    art.forEach((row, y) => {
+        [...row].forEach((ch, x) => {
+            if (!colors[ch]) return;
+            ctx.fillStyle = colors[ch];
+            ctx.fillRect(x*PS, y*PS, PS, PS);
+        });
     });
 })();
