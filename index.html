@@ -3,44 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ML Portfolio</title>
+<title>José Nunes — ML Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=JetBrains+Mono&family=Lora&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="portfolio.css">
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
     <div class="nav-container">
         <div class="logo">JN</div>
-        <button id="menuBtn">☰</button>
+
         <ul id="navLinks">
             <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
             <li><a href="#exp">Experience</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <button id="menuBtn">☰</button>
     </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-    <div class="hero-grid">
-
-        <div class="hero-text">
-            <p class="tag">ML · Deep Learning · Maths</p>
-            <h1>Building models that actually generalise</h1>
-            <p>Data Science MSc — blending theory with real-world ML systems.</p>
+    <div class="hero-grid reveal">
+        <div>
+            <p class="tag">Machine Learning · Deep Learning · Mathematics</p>
+            <h1>Building models that <em>actually</em> generalise.</h1>
+            <p>MSc candidate in Data Analysis & Engineering.</p>
         </div>
-
         <svg id="nn"></svg>
+    </div>
+</section>
 
+<!-- ABOUT -->
+<section id="about" class="reveal">
+    <h2>About</h2>
+    <div class="about-container">
+        <p>My journey into machine learning started with a strong foundation in mathematics, where I became fascinated by how theory translates into real-world systems.</p>
+        <p>I focus on building models that not only perform well, but generalise reliably in real-world environments.</p>
+        <p>Currently pursuing a MSc in Data Analysis & Engineering, deepening expertise in statistics, optimisation and neural networks.</p>
+        <p>My objective is to contribute to large-scale ML systems combining rigorous mathematics with real-world engineering.</p>
     </div>
 </section>
 
 <!-- EXPERIENCE -->
-<section id="exp">
+<section id="exp" class="reveal">
     <h2>Experience</h2>
 
     <div class="exp-container">
@@ -52,34 +65,71 @@
 
         <div class="content">
             <div class="panel active" id="g">
-                <h3>Google</h3>
-                <p>ML systems, bidding models</p>
+                <h3>Software Engineer @ Google</h3>
+                <p>ML systems and large-scale bidding models.</p>
             </div>
 
             <div class="panel" id="p">
-                <h3>Pinterest</h3>
-                <p>Recommendation systems</p>
+                <h3>ML Engineer @ Pinterest</h3>
+                <p>Recommendation systems using graph ML.</p>
             </div>
 
             <div class="panel" id="a">
-                <h3>Amazon</h3>
-                <p>Forecasting + optimization</p>
+                <h3>ML Engineer @ Amazon</h3>
+                <p>Forecasting and optimisation systems.</p>
             </div>
         </div>
     </div>
 </section>
 
 <!-- PROJECTS -->
-<section id="projects">
+<section id="projects" class="reveal">
     <h2>Projects</h2>
 
     <div class="grid">
-        <div class="card">Coal Tracking</div>
-        <div class="card">CorSano</div>
-        <div class="card">Health Stats</div>
+
+        <div class="card reveal">
+            <h3>Coal Tracking</h3>
+            <p>System for managing production, stock, and revenue tracking.</p>
+            <a href="https://github.com/your-link" target="_blank" class="github">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+
+        <div class="card reveal">
+            <h3>CorSano</h3>
+            <p>Web platform for digitising university sports processes.</p>
+            <a href="https://github.com/your-link" target="_blank" class="github">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+
+        <div class="card reveal">
+            <h3>Health Analysis</h3>
+            <p>Statistical modelling using regression and ANOVA.</p>
+            <a href="https://github.com/your-link" target="_blank" class="github">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+
     </div>
 </section>
 
-<script src="portfolio.js"></script>
+<!-- CONTACT -->
+<section id="contact" class="reveal">
+    <h2>Contact</h2>
+
+    <div class="contact-container">
+        <a href="https://instagram.com/yourprofile" target="_blank">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://linkedin.com/in/yourprofile" target="_blank">
+            <i class="fab fa-linkedin"></i>
+        </a>
+    </div>
+</section>
+
+<script src="app.js"></script>
 </body>
 </html>
