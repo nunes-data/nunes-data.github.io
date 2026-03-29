@@ -5,10 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nunes</title>
 
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=JetBrains+Mono&family=Lora&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="portfolio.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
 </head>
 <body>
 
@@ -26,27 +25,41 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
 
-        <button id="menuBtn">☰</button>
+        <button id="menuBtn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+
+    <div id="mobileMenu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#exp">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-    <div class="hero-grid reveal">
+    <div class="hero-grid">
 
-        <div>
+        <div class="hero-text">
             <p class="tag">Machine Learning · Deep Learning · Mathematics</p>
 
             <h1 class="reveal-text">
-                <span>Building models</span>
-                <span>that <span class="accent">actually</span></span>
-                <span>generalise.</span>
+                <span class="line">Building models</span>
+                <span class="line">that <em class="accent-word">actually</em></span>
+                <span class="line">generalise.</span>
             </h1>
 
-            <p>MSc in Data Analysis & Engineering</p>
+            <p class="hero-sub">MSc in Data Analysis &amp; Engineering</p>
         </div>
 
-        <svg id="nn"></svg>
+        <svg id="nn" viewBox="0 0 440 340" preserveAspectRatio="xMidYMid meet"></svg>
     </div>
 </section>
 
@@ -56,7 +69,7 @@
     <div class="about-container">
         <p>My journey into machine learning started through mathematics, where I became fascinated by how theory translates into real-world predictive systems.</p>
         <p>I focus on building models that not only perform well, but generalise reliably.</p>
-        <p>Currently pursuing a MSc in Data Analysis & Engineering, specialising in optimisation and deep learning.</p>
+        <p>Currently pursuing a MSc in Data Analysis &amp; Engineering, specialising in optimisation and deep learning.</p>
     </div>
 </section>
 
@@ -73,18 +86,28 @@
 
         <div class="content">
             <div class="panel active" id="g">
-                <h3>Software Engineer @ Google</h3>
-                <p>ML systems and bidding models.</p>
+                <h3>Software Engineer <span class="at">@</span> Google</h3>
+                <span class="period">2023 – Present</span>
+                <p>ML systems and bidding models for large-scale advertising infrastructure. Focused on improving auction efficiency and model latency.</p>
+                <div class="tech-tags">
+                    <span>Python</span><span>TensorFlow</span><span>BigQuery</span>
+                </div>
             </div>
-
             <div class="panel" id="p">
-                <h3>ML Engineer @ Pinterest</h3>
-                <p>Recommendation systems.</p>
+                <h3>ML Engineer <span class="at">@</span> Pinterest</h3>
+                <span class="period">2022 – 2023</span>
+                <p>Recommendation systems powering the home feed. Worked on embedding models and real-time ranking pipelines.</p>
+                <div class="tech-tags">
+                    <span>PyTorch</span><span>Spark</span><span>Kafka</span>
+                </div>
             </div>
-
             <div class="panel" id="a">
-                <h3>ML Engineer @ Amazon</h3>
-                <p>Forecasting systems.</p>
+                <h3>ML Engineer <span class="at">@</span> Amazon</h3>
+                <span class="period">2021 – 2022</span>
+                <p>Demand forecasting systems for supply chain optimisation across EU distribution networks.</p>
+                <div class="tech-tags">
+                    <span>Python</span><span>MXNet</span><span>AWS</span>
+                </div>
             </div>
         </div>
     </div>
@@ -95,35 +118,63 @@
     <h2>Projects</h2>
 
     <div class="grid">
-
         <div class="card reveal">
-            <h3>Coal Tracking</h3>
-            <p>Production and revenue tracking system.</p>
-            <a href="#" class="github"><i class="fab fa-github"></i></a>
+            <div class="card-top">
+                <h3>Coal Tracking</h3>
+                <a href="#" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p>Production and revenue tracking system with real-time dashboards and anomaly detection.</p>
+            <div class="tech-tags">
+                <span>Python</span><span>SQL</span><span>Dash</span>
+            </div>
         </div>
 
         <div class="card reveal">
-            <h3>CorSano</h3>
-            <p>Sports management platform.</p>
-            <a href="#" class="github"><i class="fab fa-github"></i></a>
+            <div class="card-top">
+                <h3>CorSano</h3>
+                <a href="#" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p>Sports management platform for athlete performance tracking and competition scheduling.</p>
+            <div class="tech-tags">
+                <span>React</span><span>Node.js</span><span>PostgreSQL</span>
+            </div>
         </div>
 
         <div class="card reveal">
-            <h3>Health Analysis</h3>
-            <p>Statistical modelling and inference.</p>
-            <a href="#" class="github"><i class="fab fa-github"></i></a>
+            <div class="card-top">
+                <h3>Health Analysis</h3>
+                <a href="#" class="github" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p>Statistical modelling and causal inference on longitudinal health datasets.</p>
+            <div class="tech-tags">
+                <span>R</span><span>Stan</span><span>ggplot2</span>
+            </div>
         </div>
-
     </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact" class="reveal">
     <h2>Contact</h2>
+    <p class="contact-lead">Open to research collaborations, ML roles, and interesting problems.</p>
 
     <div class="contact-container">
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:hello@jnunes.dev" class="contact-btn">
+            <i class="fas fa-envelope"></i>
+            hello@jnunes.dev
+        </a>
+        <a href="#" class="contact-btn">
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+        </a>
+        <a href="#" class="contact-btn">
+            <i class="fab fa-github"></i>
+            GitHub
+        </a>
+        <a href="#" class="contact-btn contact-btn--outline">
+            <i class="fas fa-file-arrow-down"></i>
+            Download CV
+        </a>
     </div>
 </section>
 
