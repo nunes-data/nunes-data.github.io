@@ -258,8 +258,8 @@ section h2 {
 /* ─── ABOUT ─── */
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 160px;
-    align-items: flex-end;
+    grid-template-columns: 500px 160px;
+    align-items: center;
     gap: 60px;
 }
 
