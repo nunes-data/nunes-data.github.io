@@ -258,7 +258,7 @@ section h2 {
 /* ─── ABOUT ─── */
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 220px;
+    grid-template-columns: 1fr 160px;
     align-items: flex-end;
     gap: 60px;
 }
@@ -276,14 +276,14 @@ section h2 {
 }
 
 .about-portrait {
-    width: 220px;
+    width: 160px;
     display: flex;
     align-items: flex-end;
     justify-content: center;
 }
 
 .about-portrait img {
-    width: 220px;
+    width: 160px;
     height: auto;
     display: block;
     filter: drop-shadow(0 8px 32px rgba(126, 184, 201, 0.1));
@@ -444,7 +444,7 @@ section h2 {
     color: var(--muted);
     font-size: 1rem;
     margin-bottom: 36px;
-    max-width: 750px;
+    max-width: 700px;
     line-height: 1.7;
 }
 
