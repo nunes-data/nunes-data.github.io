@@ -258,10 +258,9 @@ section h2 {
 /* ─── ABOUT ─── */
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 220px;
     align-items: flex-end;
     gap: 60px;
-    max-width: 860px;
 }
 
 .about-container {
@@ -278,24 +277,22 @@ section h2 {
 
 .about-portrait {
     width: 220px;
-    flex-shrink: 0;
     display: flex;
     align-items: flex-end;
+    justify-content: center;
 }
 
 .about-portrait img {
     width: 220px;
     height: auto;
     display: block;
-    /* Blend the white background into the dark page */
-    mix-blend-mode: luminosity;
-    filter: contrast(1.05);
-    transition: filter 0.4s, mix-blend-mode 0.4s;
+    filter: drop-shadow(0 8px 32px rgba(126, 184, 201, 0.1));
+    transition: filter 0.4s, transform 0.4s;
 }
 
 .about-portrait img:hover {
-    mix-blend-mode: normal;
-    filter: contrast(1.05);
+    filter: drop-shadow(0 12px 40px rgba(126, 184, 201, 0.2));
+    transform: translateY(-6px);
 }
 
 /* ─── EXPERIENCE ─── */
