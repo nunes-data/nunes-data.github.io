@@ -1,5 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    // ─── CUSTOM CURSOR ───
+    const cursor = document.getElementById("cursor");
+    const ring = document.getElementById("cursor-ring");
+    let ringX = 0, ringY = 0;
+    let mouseX = 0, mouseY = 0;
+    let hidden = false;
+
+    document.addEventListener("mousemove", e => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        cursor.style.left = mouseX + "px";
+        cursor.style.top = mouseY + "px";
+        if (hidden) {
+            document.body.classList.remove("cursor-hidden");
+            hidden = false;
+        }
+    });
+
+    // Smooth-follow ring
+    function animateRing() {
+        ringX += (mouseX - ringX) * 0.12;
+        ringY += (mouseY - ringY) * 0.12;
+        ring.style.left = ringX + "px";
+        ring.style.top = ringY + "px";
+        requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    // Expand ring on interactive elements
+    const hoverTargets = "a, button, .card, .tab, .skill-pill";
+    document.querySelectorAll(hoverTargets).forEach(el => {
+        el.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover"));
+        el.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover"));
+    });
+
+    // Hide when leaving window
+    document.addEventListener("mouseleave", () => {
+        document.body.classList.add("cursor-hidden");
+        hidden = true;
+    });
+
     // ─── MOBILE MENU ───
     const menuBtn = document.getElementById("menuBtn");
     const mobileMenu = document.getElementById("mobileMenu");
