@@ -256,8 +256,15 @@ section h2 {
 }
 
 /* ─── ABOUT ─── */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: flex-end;
+    gap: 60px;
+    max-width: 860px;
+}
+
 .about-container {
-    max-width: 580px;
     display: flex;
     flex-direction: column;
     gap: 18px;
@@ -267,6 +274,28 @@ section h2 {
     color: var(--muted);
     line-height: 1.75;
     font-size: 1.02rem;
+}
+
+.about-portrait {
+    width: 220px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+}
+
+.about-portrait img {
+    width: 220px;
+    height: auto;
+    display: block;
+    /* Blend the white background into the dark page */
+    mix-blend-mode: luminosity;
+    filter: contrast(1.05);
+    transition: filter 0.4s, mix-blend-mode 0.4s;
+}
+
+.about-portrait img:hover {
+    mix-blend-mode: normal;
+    filter: contrast(1.05);
 }
 
 /* ─── EXPERIENCE ─── */
@@ -418,7 +447,7 @@ section h2 {
     color: var(--muted);
     font-size: 1rem;
     margin-bottom: 36px;
-    max-width: 480px;
+    max-width: 700px;
     line-height: 1.7;
 }
 
@@ -616,6 +645,19 @@ body.cursor-hidden #cursor-ring {
     .tab.active { border-left-color: transparent; border-bottom-color: var(--accent); }
 
     .grid { grid-template-columns: 1fr; }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .about-portrait {
+        width: 160px;
+    }
+
+    .about-portrait img {
+        width: 160px;
+    }
 }
 
 @media (max-width: 600px) {
