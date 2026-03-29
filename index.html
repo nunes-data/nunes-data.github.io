@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>José Nunes — ML Portfolio</title>
+<title>Nunes</title>
 
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans&family=JetBrains+Mono&family=Lora&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="portfolio.css">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
 
+</head>
 <body>
+
+<div id="progress"></div>
 
 <nav>
     <div class="nav-container">
@@ -32,11 +33,19 @@
 <!-- HERO -->
 <section id="hero">
     <div class="hero-grid reveal">
+
         <div>
             <p class="tag">Machine Learning · Deep Learning · Mathematics</p>
-            <h1>Building models that <em>actually</em> generalise.</h1>
-            <p>MSc candidate in Data Analysis & Engineering.</p>
+
+            <h1 class="reveal-text">
+                <span>Building models</span>
+                <span>that <span class="accent">actually</span></span>
+                <span>generalise.</span>
+            </h1>
+
+            <p>MSc in Data Analysis & Engineering</p>
         </div>
+
         <svg id="nn"></svg>
     </div>
 </section>
@@ -45,10 +54,9 @@
 <section id="about" class="reveal">
     <h2>About</h2>
     <div class="about-container">
-        <p>My journey into machine learning started with a strong foundation in mathematics, where I became fascinated by how theory translates into real-world systems.</p>
-        <p>I focus on building models that not only perform well, but generalise reliably in real-world environments.</p>
-        <p>Currently pursuing a MSc in Data Analysis & Engineering, deepening expertise in statistics, optimisation and neural networks.</p>
-        <p>My objective is to contribute to large-scale ML systems combining rigorous mathematics with real-world engineering.</p>
+        <p>My journey into machine learning started through mathematics, where I became fascinated by how theory translates into real-world predictive systems.</p>
+        <p>I focus on building models that not only perform well, but generalise reliably.</p>
+        <p>Currently pursuing a MSc in Data Analysis & Engineering, specialising in optimisation and deep learning.</p>
     </div>
 </section>
 
@@ -66,17 +74,17 @@
         <div class="content">
             <div class="panel active" id="g">
                 <h3>Software Engineer @ Google</h3>
-                <p>ML systems and large-scale bidding models.</p>
+                <p>ML systems and bidding models.</p>
             </div>
 
             <div class="panel" id="p">
                 <h3>ML Engineer @ Pinterest</h3>
-                <p>Recommendation systems using graph ML.</p>
+                <p>Recommendation systems.</p>
             </div>
 
             <div class="panel" id="a">
                 <h3>ML Engineer @ Amazon</h3>
-                <p>Forecasting and optimisation systems.</p>
+                <p>Forecasting systems.</p>
             </div>
         </div>
     </div>
@@ -90,26 +98,20 @@
 
         <div class="card reveal">
             <h3>Coal Tracking</h3>
-            <p>System for managing production, stock, and revenue tracking.</p>
-            <a href="https://github.com/your-link" target="_blank" class="github">
-                <i class="fab fa-github"></i>
-            </a>
+            <p>Production and revenue tracking system.</p>
+            <a href="#" class="github"><i class="fab fa-github"></i></a>
         </div>
 
         <div class="card reveal">
             <h3>CorSano</h3>
-            <p>Web platform for digitising university sports processes.</p>
-            <a href="https://github.com/your-link" target="_blank" class="github">
-                <i class="fab fa-github"></i>
-            </a>
+            <p>Sports management platform.</p>
+            <a href="#" class="github"><i class="fab fa-github"></i></a>
         </div>
 
         <div class="card reveal">
             <h3>Health Analysis</h3>
-            <p>Statistical modelling using regression and ANOVA.</p>
-            <a href="https://github.com/your-link" target="_blank" class="github">
-                <i class="fab fa-github"></i>
-            </a>
+            <p>Statistical modelling and inference.</p>
+            <a href="#" class="github"><i class="fab fa-github"></i></a>
         </div>
 
     </div>
@@ -120,13 +122,8 @@
     <h2>Contact</h2>
 
     <div class="contact-container">
-        <a href="https://instagram.com/yourprofile" target="_blank">
-            <i class="fab fa-instagram"></i>
-        </a>
-
-        <a href="https://linkedin.com/in/yourprofile" target="_blank">
-            <i class="fab fa-linkedin"></i>
-        </a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
 </section>
 
