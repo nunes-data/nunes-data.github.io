@@ -55,7 +55,7 @@ nav.scrolled {
 
 #navLinks a {
     text-decoration: none;
-    color: #8b8780;
+    color: #c8a96e;
     position: relative;
 }
 
@@ -135,7 +135,7 @@ nav.scrolled {
 }
 
 .tab.active {
-    color: #7eb8c9;
+    color: #c8a96e;
 }
 
 .panel {
@@ -174,7 +174,7 @@ nav.scrolled {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    color: #7eb8c9;
+    color: #c8a96e;
     font-size: 1.4rem;
 }
 
