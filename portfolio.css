@@ -456,6 +456,107 @@ section h2 {
     background: transparent;
 }
 
+/* ─── CUSTOM CURSOR ─── */
+#cursor,
+#cursor-ring {
+    pointer-events: none;
+    position: fixed;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: opacity 0.3s;
+}
+
+#cursor {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    top: 0;
+    left: 0;
+}
+
+#cursor-ring {
+    width: 36px;
+    height: 36px;
+    border: 1px solid rgba(126, 184, 201, 0.5);
+    top: 0;
+    left: 0;
+    transition: width 0.25s cubic-bezier(0.16,1,0.3,1),
+                height 0.25s cubic-bezier(0.16,1,0.3,1),
+                border-color 0.25s,
+                opacity 0.3s;
+}
+
+body.cursor-hover #cursor-ring {
+    width: 56px;
+    height: 56px;
+    border-color: rgba(126, 184, 201, 0.8);
+}
+
+body.cursor-hidden #cursor,
+body.cursor-hidden #cursor-ring {
+    opacity: 0;
+}
+
+/* ─── SKILLS ─── */
+.skills-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 760px;
+}
+
+.skill-group-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 14px;
+}
+
+.skills-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skill-pill {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: rgba(20, 24, 32, 0.5);
+    transition: border-color 0.25s, background 0.25s, transform 0.25s cubic-bezier(0.16,1,0.3,1);
+    cursor: default;
+}
+
+.skill-pill:hover {
+    border-color: rgba(126, 184, 201, 0.35);
+    background: rgba(126, 184, 201, 0.05);
+    transform: translateY(-3px);
+}
+
+.skill-pill img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* GitHub icon is light on dark bg */
+.skill-pill img[alt="GitHub"] {
+    filter: invert(1) brightness(0.85);
+}
+
+.skill-pill span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text);
+    letter-spacing: 0.02em;
+}
+
 /* ─── SCROLL REVEAL ─── */
 .reveal {
     opacity: 0;
