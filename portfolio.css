@@ -266,7 +266,7 @@ section h2 {
 .about-container {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 12px;
 }
 
 .about-container p {
