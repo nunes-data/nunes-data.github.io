@@ -23,6 +23,11 @@ body {
     color: var(--text);
     font-family: 'DM Sans', sans-serif;
     font-weight: 300;
+    cursor: none;
+}
+
+a, button, .card, .tab, .skill-pill, .contact-btn, .github {
+    cursor: none;
 }
 
 /* ─── PROGRESS BAR ─── */
@@ -530,7 +535,29 @@ body.cursor-hidden #cursor-ring {
     border: 1px solid var(--border);
     background: rgba(20, 24, 32, 0.5);
     transition: border-color 0.25s, background 0.25s, transform 0.25s cubic-bezier(0.16,1,0.3,1);
-    cursor: default;
+    cursor: none;
+    overflow: hidden;
+}
+
+.skill-pill .icon-wrap {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.skill-pill .icon-wrap img {
+    width: 20px;
+    height: 20px;
+    max-width: 20px;
+    max-height: 20px;
+    object-fit: contain;
+    display: block;
 }
 
 .skill-pill:hover {
@@ -539,14 +566,8 @@ body.cursor-hidden #cursor-ring {
     transform: translateY(-3px);
 }
 
-.skill-pill img {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-}
-
-/* GitHub icon is light on dark bg */
-.skill-pill img[alt="GitHub"] {
+/* GitHub icon is black — invert on dark bg */
+.skill-pill .icon-wrap img[alt="GitHub"] {
     filter: invert(1) brightness(0.85);
 }
 
