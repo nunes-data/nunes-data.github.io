@@ -1,12 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // MOBILE MENU
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
-
-    menuBtn.onclick = () => {
-        navLinks.classList.toggle("open");
-    };
+    menuBtn.onclick = () => navLinks.classList.toggle("open");
 
     // TABS
     const tabs = document.querySelectorAll(".tab");
@@ -22,69 +17,96 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     });
 
-    // NAV SCROLL EFFECT
-    window.addEventListener("scroll", () => {
-        const nav = document.querySelector("nav");
-        if (window.scrollY > 50) nav.classList.add("scrolled");
-        else nav.classList.remove("scrolled");
-    });
-
     // SCROLL REVEAL
     const reveals = document.querySelectorAll(".reveal");
 
-    function revealOnScroll() {
-        const windowHeight = window.innerHeight;
-
+    function reveal() {
         reveals.forEach(el => {
-            const top = el.getBoundingClientRect().top;
-
-            if (top < windowHeight - 100) {
+            if (el.getBoundingClientRect().top < window.innerHeight - 100) {
                 el.classList.add("active");
             }
         });
     }
 
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
+    window.addEventListener("scroll", reveal);
+    reveal();
 
-    // NEURAL NETWORK
+    // PROGRESS BAR
+    window.addEventListener("scroll", () => {
+        const h = document.body.scrollHeight - window.innerHeight;
+        const progress = (window.scrollY / h) * 100;
+        document.getElementById("progress").style.width = progress + "%";
+    });
+
+    // MAGNETIC CARDS
+    document.querySelectorAll(".card").forEach(card => {
+        card.addEventListener("mousemove", e => {
+            const r = card.getBoundingClientRect();
+            const x = e.clientX - r.left - r.width/2;
+            const y = e.clientY - r.top - r.height/2;
+
+            card.style.transform = `translate(${x*0.05}px, ${y*0.05}px) scale(1.03)`;
+        });
+
+        card.addEventListener("mouseleave", () => {
+            card.style.transform = "translate(0,0)";
+        });
+    });
+
+    // ANIMATED NN
     const svg = document.getElementById("nn");
+    const nodes = [];
 
-    if (svg) {
-        const width = 400;
-        const height = 300;
-        const nodes = [];
-
-        for (let i = 0; i < 20; i++) {
-            const x = Math.random() * width;
-            const y = Math.random() * height;
-
-            nodes.push({ x, y });
-
-            const c = document.createElementNS("http://www.w3.org/2000/svg","circle");
-            c.setAttribute("cx", x);
-            c.setAttribute("cy", y);
-            c.setAttribute("r", 4);
-            c.setAttribute("fill", "#7eb8c9");
-
-            svg.appendChild(c);
-        }
-
-        nodes.forEach(n1 => {
-            nodes.forEach(n2 => {
-                if (Math.random() > 0.9) return;
-
-                const line = document.createElementNS("http://www.w3.org/2000/svg","line");
-                line.setAttribute("x1", n1.x);
-                line.setAttribute("y1", n1.y);
-                line.setAttribute("x2", n2.x);
-                line.setAttribute("y2", n2.y);
-                line.setAttribute("stroke", "#c8a96e");
-                line.setAttribute("opacity", "0.2");
-
-                svg.appendChild(line);
-            });
+    for (let i = 0; i < 25; i++) {
+        nodes.push({
+            x: Math.random()*400,
+            y: Math.random()*300,
+            vx: (Math.random()-0.5)*0.3,
+            vy: (Math.random()-0.5)*0.3
         });
     }
 
+    function draw() {
+        svg.innerHTML = "";
+
+        nodes.forEach(n => {
+            n.x += n.vx;
+            n.y += n.vy;
+
+            if (n.x<0||n.x>400) n.vx*=-1;
+            if (n.y<0||n.y>300) n.vy*=-1;
+        });
+
+        nodes.forEach(n1=>{
+            nodes.forEach(n2=>{
+                const dx=n1.x-n2.x;
+                const dy=n1.y-n2.y;
+                const d=Math.sqrt(dx*dx+dy*dy);
+
+                if(d<100){
+                    const l=document.createElementNS("http://www.w3.org/2000/svg","line");
+                    l.setAttribute("x1",n1.x);
+                    l.setAttribute("y1",n1.y);
+                    l.setAttribute("x2",n2.x);
+                    l.setAttribute("y2",n2.y);
+                    l.setAttribute("stroke","#7eb8c9");
+                    l.setAttribute("opacity",1-d/100);
+                    svg.appendChild(l);
+                }
+            });
+        });
+
+        nodes.forEach(n=>{
+            const c=document.createElementNS("http://www.w3.org/2000/svg","circle");
+            c.setAttribute("cx",n.x);
+            c.setAttribute("cy",n.y);
+            c.setAttribute("r",3);
+            c.setAttribute("fill","#c8a96e");
+            svg.appendChild(c);
+        });
+
+        requestAnimationFrame(draw);
+    }
+
+    draw();
 });
