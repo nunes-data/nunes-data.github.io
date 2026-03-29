@@ -242,37 +242,37 @@ h1.reveal-text {
 
 /* ─── SECTIONS ─── */
 section {
-    padding: 100px 60px;
+    padding: 120px 80px;
 }
 
 section h2 {
     font-family: 'Lora', serif;
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     font-weight: 400;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 48px;
+    margin-bottom: 64px;
 }
 
 /* ─── ABOUT ─── */
 .about-grid {
     display: grid;
-    grid-template-columns: 500px 1fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 60px;
+    gap: 80px;
 }
 
 .about-container {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 24px;
 }
 
 .about-container p {
     color: var(--muted);
-    line-height: 1.75;
-    font-size: 1.02rem;
+    line-height: 1.85;
+    font-size: 1.15rem;
 }
 
 .about-portrait {
@@ -282,7 +282,7 @@ section h2 {
 }
 
 .about-portrait img {
-    width: 210px;
+    width: 260px;
     height: auto;
     display: block;
     filter: drop-shadow(0 8px 32px rgba(126, 184, 201, 0.1));
@@ -297,15 +297,14 @@ section h2 {
 /* ─── EXPERIENCE ─── */
 .exp-container {
     display: flex;
-    gap: 48px;
-    max-width: 760px;
+    gap: 64px;
 }
 
 .tabs {
     display: flex;
     flex-direction: column;
     gap: 4px;
-    min-width: 110px;
+    min-width: 130px;
     border-left: 1px solid var(--border);
 }
 
@@ -313,11 +312,11 @@ section h2 {
     background: none;
     border: none;
     text-align: left;
-    padding: 10px 20px;
+    padding: 12px 24px;
     color: var(--muted);
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
-    cursor: pointer;
+    font-size: 0.88rem;
+    cursor: none;
     transition: color 0.2s, border-color 0.2s;
     border-left: 2px solid transparent;
     margin-left: -1px;
@@ -333,7 +332,7 @@ section h2 {
 .panel {
     display: none;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 
 .panel.active {
@@ -342,7 +341,7 @@ section h2 {
 
 .panel h3 {
     font-family: 'Lora', serif;
-    font-size: 1.15rem;
+    font-size: 1.4rem;
     font-weight: 400;
 }
 
@@ -353,33 +352,33 @@ section h2 {
 
 .period {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     color: var(--muted);
     letter-spacing: 0.05em;
 }
 
 .panel p {
     color: var(--muted);
-    line-height: 1.7;
-    font-size: 0.95rem;
-    max-width: 480px;
+    line-height: 1.8;
+    font-size: 1.05rem;
+    max-width: 620px;
 }
 
 /* ─── TECH TAGS ─── */
 .tech-tags {
     display: flex;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
 .tech-tags span {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.8rem;
     color: var(--accent);
     border: 1px solid rgba(126, 184, 201, 0.25);
     border-radius: 4px;
-    padding: 3px 10px;
+    padding: 4px 13px;
     letter-spacing: 0.04em;
 }
 
@@ -387,20 +386,20 @@ section h2 {
 .grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 28px;
 }
 
 .card {
     background: rgba(20, 24, 32, 0.6);
-    padding: 28px;
-    border-radius: 12px;
+    padding: 36px;
+    border-radius: 14px;
     border: 1px solid var(--border);
     transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
                 border-color 0.3s,
                 box-shadow 0.4s;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
 }
 
 .card:hover {
@@ -416,14 +415,14 @@ section h2 {
 
 .card-top h3 {
     font-family: 'Lora', serif;
-    font-size: 1.05rem;
+    font-size: 1.25rem;
     font-weight: 400;
 }
 
 .card p {
     color: var(--muted);
-    line-height: 1.65;
-    font-size: 0.9rem;
+    line-height: 1.75;
+    font-size: 1rem;
     flex: 1;
 }
 
@@ -441,28 +440,28 @@ section h2 {
 /* ─── CONTACT ─── */
 .contact-lead {
     color: var(--muted);
-    font-size: 1rem;
-    margin-bottom: 36px;
+    font-size: 1.15rem;
+    margin-bottom: 44px;
     max-width: 700px;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
 .contact-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
+    gap: 16px;
 }
 
 .contact-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
     text-decoration: none;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.8rem;
+    font-size: 0.88rem;
     letter-spacing: 0.04em;
-    padding: 11px 22px;
-    border-radius: 6px;
+    padding: 14px 28px;
+    border-radius: 8px;
     border: 1px solid rgba(126, 184, 201, 0.3);
     color: var(--text);
     background: rgba(126, 184, 201, 0.05);
@@ -533,31 +532,30 @@ body.cursor-hidden #cursor-ring {
 .skills-groups {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    max-width: 760px;
+    gap: 48px;
 }
 
 .skill-group-label {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--muted);
-    margin-bottom: 14px;
+    margin-bottom: 16px;
 }
 
 .skills-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px;
 }
 
 .skill-pill {
     display: flex;
     align-items: center;
-    gap: 9px;
-    padding: 10px 18px;
-    border-radius: 8px;
+    gap: 11px;
+    padding: 13px 22px;
+    border-radius: 10px;
     border: 1px solid var(--border);
     background: rgba(20, 24, 32, 0.5);
     transition: border-color 0.25s, background 0.25s, transform 0.25s cubic-bezier(0.16,1,0.3,1);
@@ -566,10 +564,10 @@ body.cursor-hidden #cursor-ring {
 }
 
 .skill-pill .icon-wrap {
-    width: 20px;
-    height: 20px;
-    min-width: 20px;
-    min-height: 20px;
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    min-height: 22px;
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -578,10 +576,10 @@ body.cursor-hidden #cursor-ring {
 }
 
 .skill-pill .icon-wrap img {
-    width: 20px;
-    height: 20px;
-    max-width: 20px;
-    max-height: 20px;
+    width: 22px;
+    height: 22px;
+    max-width: 22px;
+    max-height: 22px;
     object-fit: contain;
     display: block;
 }
@@ -599,7 +597,7 @@ body.cursor-hidden #cursor-ring {
 
 .skill-pill span {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.78rem;
+    font-size: 0.88rem;
     color: var(--text);
     letter-spacing: 0.02em;
 }
