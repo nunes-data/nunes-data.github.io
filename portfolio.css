@@ -258,7 +258,7 @@ section h2 {
 /* ─── ABOUT ─── */
 .about-grid {
     display: grid;
-    grid-template-columns: 500px 160px;
+    grid-template-columns: 500px 1fr;
     align-items: center;
     gap: 60px;
 }
@@ -276,14 +276,13 @@ section h2 {
 }
 
 .about-portrait {
-    width: 160px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
 }
 
 .about-portrait img {
-    width: 160px;
+    width: 210px;
     height: auto;
     display: block;
     filter: drop-shadow(0 8px 32px rgba(126, 184, 201, 0.1));
